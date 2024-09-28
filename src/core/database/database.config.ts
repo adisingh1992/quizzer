@@ -1,0 +1,115 @@
+import * as dotenv from 'dotenv';
+import { IDatabaseConfig } from './interfaces/dbconfig.interface';
+
+dotenv.config();
+
+export const databaseConfig: IDatabaseConfig = {
+    development: {
+        username: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME_DEVELOPMENT,
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        dialect: process.env.DB_DIALECT,
+        ssl: {
+            rejectUnauthorized: true,
+            ca: `-----BEGIN CERTIFICATE-----
+MIIEQTCCAqmgAwIBAgIUMr2/urpRnkDGwl5Lp+c7guG3eOYwDQYJKoZIhvcNAQEM
+BQAwOjE4MDYGA1UEAwwvNzUyY2Q2ZDUtOTU5NS00ZjFkLTg2YzQtOTA2M2U0MmE5
+NTJiIFByb2plY3QgQ0EwHhcNMjQwOTI4MTA0NTA1WhcNMzQwOTI2MTA0NTA1WjA6
+MTgwNgYDVQQDDC83NTJjZDZkNS05NTk1LTRmMWQtODZjNC05MDYzZTQyYTk1MmIg
+UHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAMuSw+cg
+pzd/KlvYbTmPmRLtDmZlNqeEhZ02ei/y8gGULRSKNDKtRnpgEe8sE3N79tfrXjXh
+foyyGhpNpddf3ssC0Vk1c9AooE7bUKEMeO4TOoJXXQxcFnhdTOunhHyPFMWESb2m
+Cc3cIOH4MRID4++yzBYjbEhxbnwYd8kCd4s+VBdzJ6FAOieqTy1RYbuHCfWwo6R8
+YZorsMnqwXmzvUQFjuSb3gPFiPEs74cjmY8TXGfaGsLQ23QIlKm4qYVe9E3VfGkh
+Slgxiu5DpyewFA/Q1RQ28IKMcSTTSH/92EI3DZwUraH5UWhwpI22Akq/3W+4oa9g
+0Mtop8RkimAMAq9H/JjUgbrBQkIU9UrsWL4TQyRiXgGngc2+Y1V+F8sYpahmara9
+A0/sE1sQpS6Vbl3LvSHihX9RTy6P/0LktcONLEBXL4glgnKgwoupbo7uygq4/4Fb
+b7tvX/JdlWoPRMTPi+yq0aogHmY/wBi8NPAHNChED3v7y6iX6fIJZbt5PQIDAQAB
+oz8wPTAdBgNVHQ4EFgQUebrJ3fTWy6OOhhoXrZmkF97W3GIwDwYDVR0TBAgwBgEB
+/wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQADggGBAGSqcUMXS6A9ZhYd
+DliImo199/AStonCR/DN83ntIcHmmtBj2bvHaCm5PMrMRQBB42XxQeUMjl89NQWa
+J2Fkc8RjoyeedZRVRWvuYr3tuA5rKpOnPEC+sPixAUytv286x0aWTWtMEcLzD3Mp
+tBul6JP82oEuRh11jWqwiJeSDGcE0AyImuvYYNRhhZXJ9X5xrQfLdrZFAqIFIn+u
+k7tv0NW2xjjU/jZiYn7ZgKOaiD1DO776LCjLQLEcd2RtHEJz4XDZ7uebOvBxb6sJ
+ho5g7oHCJ4YqO5Q1a4CBThOmDLdm2n67n0H1kcnHXY5SAIj4K1e9wKC8AV2vtrcA
+k5as9fJc958hpwiXlUVZIQLgG7qlgkCfjNWwa4aHWIvNazWSbr/Z0bdi1i32rhLf
+UVAiN8qTKufpDBIcZYWJOdW0icPyjplxo3KGShNllp3aQJDNZ+1fnBE4XdxkpFK8
+w6aw9NNUrXt14z1YrG10rZ4nXsVMKcYyc/HjOr1xstoTBQty8Q==
+-----END CERTIFICATE-----`,
+        },
+    },
+    test: {
+        username: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME_TEST,
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        dialect: process.env.DB_DIALECT,
+        ssl: {
+            rejectUnauthorized: true,
+            ca: `-----BEGIN CERTIFICATE-----
+MIIEQTCCAqmgAwIBAgIUMr2/urpRnkDGwl5Lp+c7guG3eOYwDQYJKoZIhvcNAQEM
+BQAwOjE4MDYGA1UEAwwvNzUyY2Q2ZDUtOTU5NS00ZjFkLTg2YzQtOTA2M2U0MmE5
+NTJiIFByb2plY3QgQ0EwHhcNMjQwOTI4MTA0NTA1WhcNMzQwOTI2MTA0NTA1WjA6
+MTgwNgYDVQQDDC83NTJjZDZkNS05NTk1LTRmMWQtODZjNC05MDYzZTQyYTk1MmIg
+UHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAMuSw+cg
+pzd/KlvYbTmPmRLtDmZlNqeEhZ02ei/y8gGULRSKNDKtRnpgEe8sE3N79tfrXjXh
+foyyGhpNpddf3ssC0Vk1c9AooE7bUKEMeO4TOoJXXQxcFnhdTOunhHyPFMWESb2m
+Cc3cIOH4MRID4++yzBYjbEhxbnwYd8kCd4s+VBdzJ6FAOieqTy1RYbuHCfWwo6R8
+YZorsMnqwXmzvUQFjuSb3gPFiPEs74cjmY8TXGfaGsLQ23QIlKm4qYVe9E3VfGkh
+Slgxiu5DpyewFA/Q1RQ28IKMcSTTSH/92EI3DZwUraH5UWhwpI22Akq/3W+4oa9g
+0Mtop8RkimAMAq9H/JjUgbrBQkIU9UrsWL4TQyRiXgGngc2+Y1V+F8sYpahmara9
+A0/sE1sQpS6Vbl3LvSHihX9RTy6P/0LktcONLEBXL4glgnKgwoupbo7uygq4/4Fb
+b7tvX/JdlWoPRMTPi+yq0aogHmY/wBi8NPAHNChED3v7y6iX6fIJZbt5PQIDAQAB
+oz8wPTAdBgNVHQ4EFgQUebrJ3fTWy6OOhhoXrZmkF97W3GIwDwYDVR0TBAgwBgEB
+/wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQADggGBAGSqcUMXS6A9ZhYd
+DliImo199/AStonCR/DN83ntIcHmmtBj2bvHaCm5PMrMRQBB42XxQeUMjl89NQWa
+J2Fkc8RjoyeedZRVRWvuYr3tuA5rKpOnPEC+sPixAUytv286x0aWTWtMEcLzD3Mp
+tBul6JP82oEuRh11jWqwiJeSDGcE0AyImuvYYNRhhZXJ9X5xrQfLdrZFAqIFIn+u
+k7tv0NW2xjjU/jZiYn7ZgKOaiD1DO776LCjLQLEcd2RtHEJz4XDZ7uebOvBxb6sJ
+ho5g7oHCJ4YqO5Q1a4CBThOmDLdm2n67n0H1kcnHXY5SAIj4K1e9wKC8AV2vtrcA
+k5as9fJc958hpwiXlUVZIQLgG7qlgkCfjNWwa4aHWIvNazWSbr/Z0bdi1i32rhLf
+UVAiN8qTKufpDBIcZYWJOdW0icPyjplxo3KGShNllp3aQJDNZ+1fnBE4XdxkpFK8
+w6aw9NNUrXt14z1YrG10rZ4nXsVMKcYyc/HjOr1xstoTBQty8Q==
+-----END CERTIFICATE-----`,
+        },
+    },
+    production: {
+        username: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME_PRODUCTION,
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        dialect: process.env.DB_DIALECT,
+        ssl: {
+            rejectUnauthorized: true,
+            ca: `-----BEGIN CERTIFICATE-----
+MIIEQTCCAqmgAwIBAgIUMr2/urpRnkDGwl5Lp+c7guG3eOYwDQYJKoZIhvcNAQEM
+BQAwOjE4MDYGA1UEAwwvNzUyY2Q2ZDUtOTU5NS00ZjFkLTg2YzQtOTA2M2U0MmE5
+NTJiIFByb2plY3QgQ0EwHhcNMjQwOTI4MTA0NTA1WhcNMzQwOTI2MTA0NTA1WjA6
+MTgwNgYDVQQDDC83NTJjZDZkNS05NTk1LTRmMWQtODZjNC05MDYzZTQyYTk1MmIg
+UHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAMuSw+cg
+pzd/KlvYbTmPmRLtDmZlNqeEhZ02ei/y8gGULRSKNDKtRnpgEe8sE3N79tfrXjXh
+foyyGhpNpddf3ssC0Vk1c9AooE7bUKEMeO4TOoJXXQxcFnhdTOunhHyPFMWESb2m
+Cc3cIOH4MRID4++yzBYjbEhxbnwYd8kCd4s+VBdzJ6FAOieqTy1RYbuHCfWwo6R8
+YZorsMnqwXmzvUQFjuSb3gPFiPEs74cjmY8TXGfaGsLQ23QIlKm4qYVe9E3VfGkh
+Slgxiu5DpyewFA/Q1RQ28IKMcSTTSH/92EI3DZwUraH5UWhwpI22Akq/3W+4oa9g
+0Mtop8RkimAMAq9H/JjUgbrBQkIU9UrsWL4TQyRiXgGngc2+Y1V+F8sYpahmara9
+A0/sE1sQpS6Vbl3LvSHihX9RTy6P/0LktcONLEBXL4glgnKgwoupbo7uygq4/4Fb
+b7tvX/JdlWoPRMTPi+yq0aogHmY/wBi8NPAHNChED3v7y6iX6fIJZbt5PQIDAQAB
+oz8wPTAdBgNVHQ4EFgQUebrJ3fTWy6OOhhoXrZmkF97W3GIwDwYDVR0TBAgwBgEB
+/wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQADggGBAGSqcUMXS6A9ZhYd
+DliImo199/AStonCR/DN83ntIcHmmtBj2bvHaCm5PMrMRQBB42XxQeUMjl89NQWa
+J2Fkc8RjoyeedZRVRWvuYr3tuA5rKpOnPEC+sPixAUytv286x0aWTWtMEcLzD3Mp
+tBul6JP82oEuRh11jWqwiJeSDGcE0AyImuvYYNRhhZXJ9X5xrQfLdrZFAqIFIn+u
+k7tv0NW2xjjU/jZiYn7ZgKOaiD1DO776LCjLQLEcd2RtHEJz4XDZ7uebOvBxb6sJ
+ho5g7oHCJ4YqO5Q1a4CBThOmDLdm2n67n0H1kcnHXY5SAIj4K1e9wKC8AV2vtrcA
+k5as9fJc958hpwiXlUVZIQLgG7qlgkCfjNWwa4aHWIvNazWSbr/Z0bdi1i32rhLf
+UVAiN8qTKufpDBIcZYWJOdW0icPyjplxo3KGShNllp3aQJDNZ+1fnBE4XdxkpFK8
+w6aw9NNUrXt14z1YrG10rZ4nXsVMKcYyc/HjOr1xstoTBQty8Q==
+-----END CERTIFICATE-----`,
+        },
+    }
+};

@@ -3,24 +3,31 @@ import { Table, Column, Model, DataType } from 'sequelize-typescript';
 @Table
 export class User extends Model<User> {
     @Column({
-        type: DataType.INTEGER,
+        type: DataType.UUID,
+        defaultValue: DataType.UUIDV4,
+        unique: true,
         allowNull: false,
-        autoIncrement: true,
-        autoIncrementIdentity: true,
         primaryKey: true,
     })
     id: string;
 
     @Column({
         type: DataType.STRING,
-        allowNull: false
+        allowNull: false,
+        defaultValue: "+91",
+        validate: {
+            notEmpty: true
+        }
     })
     countryCode: string;
 
     @Column({
         type: DataType.STRING,
         allowNull: false,
-        unique: true
+        unique: true,
+        validate: {
+            notEmpty: true
+        }
     })
     phoneNumber: string;
 

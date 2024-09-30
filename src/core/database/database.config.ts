@@ -110,6 +110,6 @@ k5as9fJc958hpwiXlUVZIQLgG7qlgkCfjNWwa4aHWIvNazWSbr/Z0bdi1i32rhLf
 UVAiN8qTKufpDBIcZYWJOdW0icPyjplxo3KGShNllp3aQJDNZ+1fnBE4XdxkpFK8
 w6aw9NNUrXt14z1YrG10rZ4nXsVMKcYyc/HjOr1xstoTBQty8Q==
 -----END CERTIFICATE-----`,
-        },
+        }
     }
 };

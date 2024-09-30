@@ -12,6 +12,17 @@ export class AuthService {
         private _jwtService: JwtService
     ) { }
 
+    async loginAdmin(email: string, password: string) {
+        const adminEmail: string = process.env.ADMIN_EMAIL as string;
+        const adminPassword: string = process.env.ADMIN_PASSWORD as string;
+
+        if (email !== adminEmail || password !== adminPassword) throw new UnauthorizedException();
+
+        const payload = { sub: email, isAdmin: true };
+
+        return { access_token: await this._jwtService.signAsync(payload) };
+    }
+
     async login(phoneNumber: string) {
         let user = await this._userService.findByPhoneNumber(phoneNumber);
 

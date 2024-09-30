@@ -1,8 +1,9 @@
 import { Sequelize } from 'sequelize-typescript';
 import { databaseConfig } from './database.config';
 import { SEQUELIZE, DEVELOPMENT, TEST, PRODUCTION } from '../constants';
-import { User } from 'src/users/user.entity';
 import { Dialect } from 'sequelize';
+import { User } from 'src/users/user.entity';
+import { Quiz } from 'src/quiz/quiz.entity';
 
 export const databaseProviders = [{
     provide: SEQUELIZE,
@@ -32,10 +33,10 @@ export const databaseProviders = [{
                 ssl: true, dialectOptions: { ssl: config.ssl, encrypt: true }
             });
 
-        sequelize.addModels([User]);
+        sequelize.addModels([User, Quiz]);
 
         await sequelize.sync();
 
         return sequelize;
-    },
+    }
 }];

@@ -21,8 +21,6 @@ export class UserService {
     }
 
     async updateOTP(id: string, otp: string) {
-        console.log(id, otp);
-
         return this.userRepository.update({ otp: otp }, { where: { id: id } });
     }
 }

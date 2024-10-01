@@ -3,3 +3,21 @@ export interface QuizRequest {
 
     timeInMinutes: number;
 }
+
+export interface QuestionRequest {
+    description: string;
+
+    img: string;
+
+    a: string;
+
+    b: string;
+
+    c: string;
+
+    d: string;
+
+    correctAnswer: string;
+
+    quizId: string
+}

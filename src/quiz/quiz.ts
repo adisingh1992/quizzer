@@ -21,3 +21,11 @@ export interface QuestionRequest {
 
     quizId: string
 }
+
+export interface AnswerRequest {
+    quizId: string;
+
+    questionId: string;
+
+    answer: string;
+}

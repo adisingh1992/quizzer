@@ -24,6 +24,10 @@ export class QuestionService {
         return await this.questionRepository.create<Question>(question);
     }
 
+    async findById(questionId: string) {
+        return await this.questionRepository.findByPk(questionId);
+    }
+
     async findAllByQuiz(quizId: string) {
         return await this.questionRepository.findAll({
             where: { quizId: quizId }, attributes: { exclude: ['correctAnswer'] }

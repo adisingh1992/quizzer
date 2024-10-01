@@ -5,6 +5,7 @@ import { Dialect } from 'sequelize';
 import { User } from 'src/users/user.entity';
 import { Quiz } from 'src/quiz/quiz.entity';
 import { Question } from 'src/quiz/questions/question.entity';
+import { Result } from 'src/quiz/results/result.entity';
 
 export const databaseProviders = [{
     provide: SEQUELIZE,
@@ -34,7 +35,7 @@ export const databaseProviders = [{
                 ssl: true, dialectOptions: { ssl: config.ssl, encrypt: true }
             });
 
-        sequelize.addModels([User, Quiz, Question]);
+        sequelize.addModels([User, Quiz, Question, Result]);
 
         await sequelize.sync();
 

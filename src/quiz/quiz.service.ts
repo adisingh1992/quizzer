@@ -20,6 +20,12 @@ export class QuizService {
         return await this.quizRepository.findAll<Quiz>();
     }
 
+    async findByIds(quizIds: string[]) {
+        return await this.quizRepository.findAll({
+            where: { id: quizIds }
+        });
+    }
+
     async deleteById(quizId: string) {
         return await this.quizRepository.destroy({ where: { id: quizId } });
     }

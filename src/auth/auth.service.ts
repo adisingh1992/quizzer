@@ -67,7 +67,11 @@ export class AuthService {
 
         await this._userService.updateOTP(user.id, '');
 
-        const payload = { sub: user.id, phoneNumber: user.phoneNumber };
+        const payload = {
+            sub: user.id,
+            phoneNumber: user.phoneNumber,
+            subscriber: user.subscriber
+        };
 
         return { access_token: await this._jwtService.signAsync(payload) };
     }

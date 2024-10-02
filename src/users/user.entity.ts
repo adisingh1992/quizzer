@@ -35,4 +35,10 @@ export class User extends Model<User> {
         type: DataType.STRING
     })
     otp: string;
+
+    @Column({
+        type: DataType.BOOLEAN,
+        defaultValue: false
+    })
+    subscriber: string;
 }

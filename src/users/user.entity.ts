@@ -40,5 +40,5 @@ export class User extends Model<User> {
         type: DataType.BOOLEAN,
         defaultValue: false
     })
-    subscriber: string;
+    subscriber: boolean;
 }

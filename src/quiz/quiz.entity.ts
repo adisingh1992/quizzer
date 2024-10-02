@@ -26,4 +26,10 @@ export class Quiz extends Model<Quiz> {
         defaultValue: 60
     })
     timeInMinutes: number;
+
+    @Column({
+        type: DataType.BOOLEAN,
+        defaultValue: true
+    })
+    paid: boolean;
 }

@@ -7,10 +7,11 @@ export class QuizService {
 
     constructor(@Inject(QUIZ_REPOSITORY) private readonly quizRepository: typeof Quiz) { }
 
-    async create(name: string, timeInMinutes: number) {
+    async create(name: string, timeInMinutes: number, paid: boolean) {
         const quiz: Quiz = {
             name: name,
-            timeInMinutes: timeInMinutes
+            timeInMinutes: timeInMinutes,
+            paid: paid
         } as Quiz;
 
         return await this.quizRepository.create<Quiz>(quiz);

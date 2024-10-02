@@ -2,6 +2,8 @@ export interface QuizRequest {
     name: string;
 
     timeInMinutes: number;
+
+    paid: boolean;
 }
 
 export interface QuestionRequest {

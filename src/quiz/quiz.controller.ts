@@ -14,7 +14,7 @@ export class QuizController {
 
     @Post()
     async createQuiz(@Res() res: Response, @Body() quizRequest: QuizRequest) {
-        const response = await this._quizService.create(quizRequest.name, quizRequest.timeInMinutes);
+        const response = await this._quizService.create(quizRequest.name, quizRequest.timeInMinutes, quizRequest.paid);
 
         return res.status(HttpStatus.CREATED).json(response);
     }

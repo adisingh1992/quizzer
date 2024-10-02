@@ -23,4 +23,10 @@ export class UserService {
     async updateOTP(id: string, otp: string) {
         return this.userRepository.update({ otp: otp }, { where: { id: id } });
     }
+
+    async findAll() {
+        return this.userRepository.findAll({
+            attributes: { exclude: ['otp'] }
+        });
+    }
 }
